@@ -9,10 +9,13 @@ const renderLines = lines => {
   return lines.map(line => {
     return (
       <React.Fragment key={line.id}>
-        {line.cmd ? prompt : ''}
-        {line.text}
-        {line.current ? cursor : ''}
-        <br />
+        <div className="terminal-block">
+          {line.cmd ? prompt : ''}
+          <p className="terminal-text">{line.text}</p>
+          {line.current ? cursor : ''}
+          <br />
+        </div>
+       
       </React.Fragment>
     )
   })
